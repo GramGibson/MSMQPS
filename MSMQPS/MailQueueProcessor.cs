@@ -6,7 +6,7 @@
 
 	public class MailQueueProcessor {
 		private static MessageQueue _q = null;
-		private static object _lockObject = new object();
+		private static object _lock = new object();
 		readonly Timer _timer;
 
 		public MailQueueProcessor() {
@@ -33,7 +33,7 @@
 		}
 
 		static void q_ReceiveCompleted(object sender, ReceiveCompletedEventArgs e) {
-			lock (_lockObject) {
+			lock (_lock) {
 				SendMail((Email)e.Message.Body);
 			}
 			_q.BeginReceive();
@@ -48,6 +48,7 @@
 			var mail = new MailMessage();
 			mail.From = new MailAddress(msg.From);
 			mail.To.Add(new MailAddress(msg.To));
+			mail.CC.Add(new MailAddress(msg.Cc));
 			mail.Subject = msg.Subject;
 			mail.Body = msg.Body;
 			mail.IsBodyHtml = msg.IsBodyHtml;
