@@ -1,11 +1,11 @@
 ﻿namespace MSMQPS {
     using System;
     using System.IO;
+    using System.Net.Mail;
     using System.Timers;
     using Topshelf;
     using Topshelf.Configuration;
     using Topshelf.Configuration.Dsl;
-    using System.Net.Mail;
 
     internal class Program {
         static void Main(string[] args) {
