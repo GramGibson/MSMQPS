@@ -7,8 +7,6 @@
 	internal class Program {
 		static void Main(string[] args) {
 			RunConfiguration cfg = RunnerConfigurator.New(x => {
-				x.AfterStoppingTheHost(h => { Console.WriteLine("AfterStop called invoked, services are stopping"); });
-
 				x.ConfigureServiceInIsolation<MailQueueProcessor>(s => {
 					s.Named("q");
 					s.HowToBuildService(name => new MailQueueProcessor());
@@ -18,8 +16,8 @@
 
 				x.RunAsLocalSystem();
 
-				x.SetDescription("MSMQ-sucking mail sender service.");
 				x.SetDisplayName("MSMQPS");
+				x.SetDescription("MSMQ-sucking mail sender service.");
 				x.SetServiceName("msmqps");
 			});
 
