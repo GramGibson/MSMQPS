@@ -5,6 +5,7 @@
     using Topshelf;
     using Topshelf.Configuration;
     using Topshelf.Configuration.Dsl;
+    using System.Net.Mail;
 
     internal class Program {
         static void Main(string[] args) {
@@ -43,6 +44,20 @@
 
         public void Stop() {
             _timer.Stop();
+        }
+
+        public void SendMail(IEmail msg) {
+            var mail = new MailMessage();
+            mail.From = new MailAddress(msg.From);
+            mail.Subject = msg.Subject;
+            mail.Body = msg.Body;
+            mail.IsBodyHtml = msg.IsBodyHtml;
+
+            foreach (var a in msg.To)
+                mail.To.Add(new MailAddress(a));
+
+            SmtpClient smtp = new SmtpClient("smtpclient");
+            smtp.Send(mail);
         }
     }
 }
