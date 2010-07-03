@@ -11,7 +11,7 @@
             <%: Html.LabelFor(model => model.From) %>
         </div>
         <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.From) %>
+            <%: Html.EditorFor(model => model.From) %>
             <%: Html.ValidationMessageFor(model => model.From) %>
         </div>
             
@@ -19,7 +19,7 @@
             <%: Html.LabelFor(model => model.To) %>
         </div>
         <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.To) %>
+            <%: Html.EditorFor(model => model.To) %>
             <%: Html.ValidationMessageFor(model => model.To) %>
         </div>
             
@@ -27,7 +27,7 @@
             <%: Html.LabelFor(model => model.Cc) %>
         </div>
         <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.Cc) %>
+            <%: Html.EditorFor(model => model.Cc) %>
             <%: Html.ValidationMessageFor(model => model.Cc) %>
         </div>
             
@@ -35,7 +35,7 @@
             <%: Html.LabelFor(model => model.Subject) %>
         </div>
         <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.Subject) %>
+            <%: Html.EditorFor(model => model.Subject) %>
             <%: Html.ValidationMessageFor(model => model.Subject) %>
         </div>
             
@@ -43,7 +43,7 @@
             <%: Html.LabelFor(model => model.Body) %>
         </div>
         <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.Body) %>
+            <%: Html.EditorFor(model => model.Body) %>
             <%: Html.ValidationMessageFor(model => model.Body) %>
         </div>
             
