@@ -1,5 +1,6 @@
 ﻿namespace MSMQPS.Web.Controllers {
 	using System.Web.Mvc;
+	using MSMQPS.Web.Lib;
 	using MSMQPS.Web.Models;
 
 	public class MessageController : Controller {
@@ -9,7 +10,8 @@
 
 		[HttpPost]
 		public ActionResult Create(Email email) {
-			return RedirectToAction("");
+			var messageService = new MessageService(email);
+			return RedirectToAction("Create");
 		}
 	}
 }

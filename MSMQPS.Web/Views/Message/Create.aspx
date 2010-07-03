@@ -51,7 +51,7 @@
             <%: Html.LabelFor(model => model.IsBodyHtml) %>
         </div>
         <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.IsBodyHtml) %>
+            <%: Html.CheckBoxFor(model => model.IsBodyHtml) %>
             <%: Html.ValidationMessageFor(model => model.IsBodyHtml) %>
         </div>
             
