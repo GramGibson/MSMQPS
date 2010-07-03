@@ -48,7 +48,10 @@
 			var mail = new MailMessage();
 			mail.From = new MailAddress(msg.From);
 			mail.To.Add(new MailAddress(msg.To));
-			mail.CC.Add(new MailAddress(msg.Cc));
+
+			if (!string.IsNullOrWhiteSpace(msg.Cc))
+				mail.CC.Add(new MailAddress(msg.Cc));
+
 			mail.Subject = msg.Subject;
 			mail.Body = msg.Body;
 			mail.IsBodyHtml = msg.IsBodyHtml;
