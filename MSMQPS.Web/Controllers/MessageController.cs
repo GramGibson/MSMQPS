@@ -14,7 +14,11 @@
 				return View(email);
 
 			var messageService = new MessageService(email);
-			return RedirectToAction("Create");
+			return RedirectToAction("Confirm");
+		}
+
+		public ActionResult Confirm() {
+			return View();
 		}
 	}
 }
