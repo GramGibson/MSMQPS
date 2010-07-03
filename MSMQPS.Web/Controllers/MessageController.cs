@@ -10,6 +10,9 @@
 
 		[HttpPost]
 		public ActionResult Create(Email email) {
+			if (!ModelState.IsValid)
+				return View(email);
+
 			var messageService = new MessageService(email);
 			return RedirectToAction("Create");
 		}
