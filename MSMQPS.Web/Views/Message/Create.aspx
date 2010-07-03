@@ -56,7 +56,7 @@
         </div>
             
         <p>
-            <input type="submit" value="Create" />
+            <input type="submit" value="Send" />
         </p>
 
     <% } %>

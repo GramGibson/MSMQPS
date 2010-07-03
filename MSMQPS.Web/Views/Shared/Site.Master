@@ -7,7 +7,7 @@
 	<link rel="Stylesheet" type="text/css" media="all" href="<%= Url.Content("~/Content/Site.css") %>" />
 </head>
 <body>
-	<div>
+	<div class="container">
 		<asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
 	</div>
 </body>
